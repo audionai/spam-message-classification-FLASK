@@ -13,7 +13,7 @@ def main():
         new_medd = request.form.get('message')
         new_medd_vec = vectorizer.transform([new_medd])
         prediction = clf.predict(new_medd_vec)
-        post = ["ham", "spam"][prediction[0]]
+        post = ["Not spam", "spam"][prediction[0]]
     return render_template('index.html', post=post, user=user)
 
 if __name__ == '__main__':
